@@ -25,7 +25,7 @@
     "sdk/**/azure-cognitiveservices**",
     "sdk/**/_generated/**",
     "**/*requirement*.txt",
-
+    
     "sdk/anomalydetector/azure-ai-anomalydetector/**",
     "sdk/applicationinsights/azure-applicationinsights/**",
     "sdk/appconfiguration/azure-appconfiguration/**",
