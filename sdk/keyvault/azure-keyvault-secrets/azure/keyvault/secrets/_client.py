@@ -51,9 +51,8 @@ class SecretClient(KeyVaultClientBase):
         :param str name: The name of the secret
         :param str version: (optional) Version of the secret to get. If unspecified, gets the latest version.
         :rtype: ~azure.keyvault.secrets.KeyVaultSecret
-        :raises:
-            :class:`~azure.core.exceptions.ResourceNotFoundError` if the secret doesn't exist,
-            :class:`~azure.core.exceptions.HttpResponseError` for other errors
+        :raises ~azure.core.exceptions.ResourceNotFoundError: if the secret doesn't exist,
+        :raises ~azure.core.exceptions.HttpResponseError: for other errors
 
         Example:
             .. literalinclude:: ../tests/test_samples_secrets.py
@@ -88,7 +87,7 @@ class SecretClient(KeyVaultClientBase):
         :keyword ~datetime.datetime not_before: Not before date of the secret in UTC
         :keyword ~datetime.datetime expires_on: Expiry date of the secret in UTC
         :rtype: ~azure.keyvault.secrets.KeyVaultSecret
-        :raises: :class:`~azure.core.exceptions.HttpResponseError`
+        :raises ~azure.core.exceptions.HttpResponseError: if the HTTP request fails
 
         Example:
             .. literalinclude:: ../tests/test_samples_secrets.py
@@ -143,9 +142,8 @@ class SecretClient(KeyVaultClientBase):
         :keyword ~datetime.datetime not_before: Not before date of the secret in UTC
         :keyword ~datetime.datetime expires_on: Expiry date of the secret in UTC
         :rtype: ~azure.keyvault.secrets.SecretProperties
-        :raises:
-            :class:`~azure.core.exceptions.ResourceNotFoundError` if the secret doesn't exist,
-            :class:`~azure.core.exceptions.HttpResponseError` for other errors
+        :raises ~azure.core.exceptions.ResourceNotFoundError: if the secret doesn't exist,
+        :raises ~azure.core.exceptions.HttpResponseError: for other errors
 
         Example:
             .. literalinclude:: ../tests/test_samples_secrets.py
@@ -246,9 +244,8 @@ class SecretClient(KeyVaultClientBase):
 
         :param str name: Name of the secret to back up
         :rtype: bytes
-        :raises:
-            :class:`~azure.core.exceptions.ResourceNotFoundError` if the secret doesn't exist,
-            :class:`~azure.core.exceptions.HttpResponseError` for other errors
+        :raises ~azure.core.exceptions.ResourceNotFoundError: if the secret doesn't exist,
+        :raises ~azure.core.exceptions.HttpResponseError: for other errors
 
         Example:
             .. literalinclude:: ../tests/test_samples_secrets.py
@@ -270,9 +267,8 @@ class SecretClient(KeyVaultClientBase):
         :param bytes backup: A secret backup as returned by :func:`backup_secret`
         :returns: The restored secret
         :rtype: ~azure.keyvault.secrets.SecretProperties
-        :raises:
-            :class:`~azure.core.exceptions.ResourceExistsError` if the secret's name is already in use,
-            :class:`~azure.core.exceptions.HttpResponseError` for other errors
+        :raises ~azure.core.exceptions.ResourceExistsError: if the secret's name is already in use,
+        :raises ~azure.core.exceptions.HttpResponseError: for other errors
 
         Example:
             .. literalinclude:: ../tests/test_samples_secrets.py
@@ -306,9 +302,8 @@ class SecretClient(KeyVaultClientBase):
          poller's `wait` method first. It will block until the deletion is complete. The `wait` method requires
          secrets/get permission.
         :rtype: ~azure.core.polling.LROPoller[~azure.keyvault.secrets.DeletedSecret]
-        :raises:
-            :class:`~azure.core.exceptions.ResourceNotFoundError` if the secret doesn't exist,
-            :class:`~azure.core.exceptions.HttpResponseError` for other errors
+        :raises ~azure.core.exceptions.ResourceNotFoundError: if the secret doesn't exist,
+        :raises ~azure.core.exceptions.HttpResponseError: for other errors
 
         Example:
             .. literalinclude:: ../tests/test_samples_secrets.py
@@ -343,9 +338,8 @@ class SecretClient(KeyVaultClientBase):
 
         :param str name: Name of the deleted secret
         :rtype: ~azure.keyvault.secrets.DeletedSecret
-        :raises:
-            :class:`~azure.core.exceptions.ResourceNotFoundError` if the deleted secret doesn't exist,
-            :class:`~azure.core.exceptions.HttpResponseError` for other errors
+        :raises ~azure.core.exceptions.ResourceNotFoundError: if the deleted secret doesn't exist,
+        :raises ~azure.core.exceptions.HttpResponseError: for other errors
 
         Example:
             .. literalinclude:: ../tests/test_samples_secrets.py
@@ -401,7 +395,7 @@ class SecretClient(KeyVaultClientBase):
 
         :param str name: Name of the secret to purge
         :returns: None
-        :raises: :class:`~azure.core.exceptions.HttpResponseError`
+        :raises ~azure.core.exceptions.HttpResponseError: if the HTTP request fails
 
         Example:
             .. code-block:: python
@@ -433,7 +427,7 @@ class SecretClient(KeyVaultClientBase):
          recovered secret immediately, call the poller's `wait` method, which blocks until the secret is ready to use.
          The `wait` method requires secrets/get permission.
         :rtype: ~azure.core.polling.LROPoller[~azure.keyvault.secrets.SecretProperties]
-        :raises: :class:`~azure.core.exceptions.HttpResponseError`
+        :raises ~azure.core.exceptions.HttpResponseError: if the HTTP request fails
 
         Example:
             .. literalinclude:: ../tests/test_samples_secrets.py
